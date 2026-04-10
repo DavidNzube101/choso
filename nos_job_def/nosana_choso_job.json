@@ -1,0 +1,27 @@
+{
+  "ops": [
+    {
+      "id": "choso",
+      "args": {
+        "image": "ghcr.io/davidnzube101/choso:latest",
+        "expose": 3000,
+        "env": {
+          "OPENAI_API_KEY": "nosana",
+          "OPENAI_API_BASE_URL": "TODO: replace with your Nosana Qwen3.5 endpoint URL",
+          "TELEGRAM_BOT_TOKEN": "TODO: replace with your Telegram bot token",
+          "SQLITE_DB_PATH": "/data/choso.db",
+          "SERVER_PORT": "3000",
+          "NODE_ENV": "production"
+        },
+        "volumes": [
+          {
+            "name": "choso-data",
+            "destination": "/data"
+          }
+        ]
+      },
+      "type": "container/run"
+    }
+  ],
+  "version": "0.1"
+}
